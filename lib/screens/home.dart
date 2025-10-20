@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                   child: NumberSelector(
-                      title: "PESO",
+                      title: "WEIGHT",
                       value: selectedWeight,
                       onDecrement: () {
                         setState(() {
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(width: 16),
               Expanded(
                   child: NumberSelector(
-                      title: "EDAD",
+                      title: "AGE",
                       value: selectedAge,
                       onDecrement: () {
                         setState(() {
