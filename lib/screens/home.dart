@@ -15,13 +15,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedAge = 20;
   int selectedWeight = 80;
+  double selectedHeight = 170;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GenderSelector(),
-        HeightSelector(),
+        HeightSelector(
+            selectedHeight: selectedHeight,
+            onHeightChange: (newHeight) {
+              setState(() {
+                selectedHeight = newHeight;
+              });
+            }),
         Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
