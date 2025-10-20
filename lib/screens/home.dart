@@ -4,6 +4,7 @@ import 'package:imc_calculator/components/height_selector.dart';
 import 'package:imc_calculator/components/number_selector.dart';
 import 'package:imc_calculator/core/app_colors.dart';
 import 'package:imc_calculator/core/text_styles.dart';
+import 'package:imc_calculator/screens/result.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -72,7 +73,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 60,
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ResultScreen(
+                                height: selectedHeight,
+                                weight: selectedWeight)));
+                  },
                   style: ButtonStyle(
                       shape: WidgetStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16))),
