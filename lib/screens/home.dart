@@ -11,6 +11,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int selectedAge = 20;
+  int selectedWeight = 80;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,9 +24,35 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(16),
           child: Row(
             children: [
-              Expanded(child: NumberSelector(title: "PESO")),
+              Expanded(
+                  child: NumberSelector(
+                      title: "PESO",
+                      value: selectedWeight,
+                      onDecrement: () {
+                        setState(() {
+                          selectedWeight--;
+                        });
+                      },
+                      onIncrement: () {
+                        setState(() {
+                          selectedWeight++;
+                        });
+                      })),
               SizedBox(width: 16),
-              Expanded(child: NumberSelector(title: "EDAD"))
+              Expanded(
+                  child: NumberSelector(
+                      title: "EDAD",
+                      value: selectedAge,
+                      onDecrement: () {
+                        setState(() {
+                          selectedAge--;
+                        });
+                      },
+                      onIncrement: () {
+                        setState(() {
+                          selectedAge++;
+                        });
+                      }))
             ],
           ),
         )
