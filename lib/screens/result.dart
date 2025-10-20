@@ -26,7 +26,7 @@ class ResultScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Tu resultado:",
+          Text("Your Result:",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 38,
